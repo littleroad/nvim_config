@@ -1,0 +1,4 @@
+indent_type = "Tabs"
+line_endings = "Unix"
+indent_width = 1
+column_width = 120
