@@ -33,31 +33,36 @@ vim.defer_fn(function()
   if vim.fn.executable('clangd') == 1 then
     vim.defer_fn(function()
       vim.lsp.config('clangd', {
-        cmd = { 'clangd' },
+        -- Add clangd option to disable automatical header insertion
+        cmd = { 'clangd', '--header-insertion=never' },
         on_attach = function(client, bufnr)
           local opts = { noremap = true, silent = true, buffer = bufnr }
           vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-	  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-	  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-	  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-	  vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set("n", "rn", vim.lsp.buf.rename, opts)
           vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-	  vim.keymap.set({ "n", "v" }, "<leader>f", function()
-		  vim.lsp.buf.format({ async = true })
-	  end, opts)
+          vim.keymap.set({ "n", "v" }, "<leader>f", function()
+            vim.lsp.buf.format({ async = true })
+          end, opts)
         end,
-        -- capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities = require('cmp_nvim_lsp').default_capabilities()
+        capabilities = vim.lsp.protocol.make_client_capabilities()
       })
       vim.lsp.enable('clangd')
+
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(ev)
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+          if client:supports_method('textDocument/completion') then
+                  vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+          end
+        end
+      })
       print('LSP configured with clangd')
 
-      require'cmp'.setup {
-        sources = {
-          { name = 'nvim_lsp' }
-        }
-      }
     end, 1000)
   end
 end, 500)
