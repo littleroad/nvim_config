@@ -46,7 +46,6 @@ opt.laststatus = 3        -- Global statusline (default: 2)
 opt.switchbuf = 'useopen,usetab'  -- Smart buffer switching
 
 -- Misc improvements
-opt.clipboard = 'unnamedplus'  -- Use system clipboard (default: '')
 opt.wildmode = "longest,list,full"
 opt.completeopt = "menuone,popup,longest"
 
