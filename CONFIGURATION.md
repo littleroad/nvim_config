@@ -11,7 +11,6 @@
 │   └── config/
 │       ├── basic.lua            # Editor options, leader, builtins
 │       ├── mappings.lua         # Global keymaps
-│       ├── navigation.lua       # Deprecated → delegates to code_intelligence
 │       └── code_intelligence.lua # LSP, cscope, ctags, Tagbar
 ```
 
@@ -21,7 +20,7 @@
 1. `config.basic` — options, leader, disabled builtins
 2. `config.mappings` — global keymaps (window, buffer, terminal)
 3. `plugins` — packer pins (calls `code_intelligence.pack()`)
-4. `config.navigation` — calls `code_intelligence.setup()`
+4. `config.code_intelligence` — calls `setup()` for FileType activation
 
 ## Modules
 

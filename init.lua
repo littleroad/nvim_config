@@ -16,5 +16,5 @@ end
 require('config.basic')
 require('config.mappings')
 require('plugins')
-require('config.navigation')
+require('config.code_intelligence').setup()
 
