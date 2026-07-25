@@ -15,6 +15,6 @@ end
 -- Load essential modules
 require('config.basic')
 require('config.mappings')
-require('config.navigation')
 require('plugins')
+require('config.navigation')
 
