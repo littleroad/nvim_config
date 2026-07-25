@@ -53,8 +53,4 @@ opt.completeopt = "menuone,popup,longest"
 -- Leader key
 vim.g.mapleader = ','
 
--- Colorscheme
-vim.cmd.colorscheme('molokai')
-vim.cmd.highlight('Normal guibg=NONE')
-vim.cmd.highlight('NonText guibg=NONE')
-vim.cmd.highlight('Comment guifg=#808080')
+
