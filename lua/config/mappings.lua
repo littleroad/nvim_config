@@ -1,4 +1,6 @@
--- Key mappings configuration
+-- Keymaps: editor chrome only (global)
+-- Feature-owned keys live in their modules (e.g., code_intelligence for LSP/Tagbar)
+-- Convention: feature modules set buffer-local maps via on_attach / FileType
 
 -- Basic movement and navigation
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
