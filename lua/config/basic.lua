@@ -21,11 +21,6 @@ opt.expandtab = false     -- Use tabs, not spaces (default: true)
 opt.shiftwidth = 0        -- Use tabstop (default: 8)
 opt.softtabstop = 0       -- Use tabstop (default: 0)
 
--- Folding settings
-opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
-opt.foldenable = false
-
 -- File encoding
 opt.fileencodings = { 'utf-8', 'gb18030', 'gbk' }
 

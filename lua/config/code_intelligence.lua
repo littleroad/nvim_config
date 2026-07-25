@@ -86,6 +86,11 @@ end
 
 --- Main setup: activate on FileType for c/cpp family
 function M.setup()
+  -- LSP fold (owns the foldexpr that basic.lua cannot)
+  vim.opt.foldmethod = "expr"
+  vim.opt.foldexpr = "v:lua.vim.lsp.foldexpr()"
+  vim.opt.foldenable = false
+
   -- Tagbar keybinding (always available if plugin loaded)
   setup_tagbar()
 
