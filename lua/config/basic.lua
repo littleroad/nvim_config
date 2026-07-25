@@ -24,7 +24,7 @@ opt.softtabstop = 0       -- Use tabstop (default: 0)
 -- File encoding
 opt.fileencodings = { 'utf-8', 'gb18030', 'gbk' }
 
--- Colorscheme and transparency
+-- Transparency and UI
 opt.background = 'dark'
 opt.pumblend = 17         -- Popup transparency (default: 0)
 opt.winblend = 17         -- Window transparency (default: 0)

@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>w', ':update<CR>')
 vim.keymap.set('n', '<leader>q', ':confirm quit<CR>')
 vim.keymap.set('n', '<leader>x', ':confirm bdelete<CR>')
 
--- Better navigation
+-- Buffer and tab navigation
 vim.keymap.set('n', ']b', ':bnext<CR>')
 vim.keymap.set('n', '[b', ':bprevious<CR>')
 vim.keymap.set('n', ']t', ':tabnext<CR>')
