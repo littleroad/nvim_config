@@ -44,6 +44,7 @@ opt.switchbuf = 'useopen,usetab'  -- Smart buffer switching
 -- Misc improvements
 opt.wildmode = "longest,list,full"
 opt.completeopt = "menuone,popup,longest"
+opt.timeoutlen = 2000
 
 -- Leader key
 vim.g.mapleader = ','
