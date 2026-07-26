@@ -17,4 +17,6 @@ require('config.basic')
 require('config.mappings')
 require('plugins')
 require('config.code_intelligence').setup()
+require('config.treesitter').setup()
+require('config.telescope').setup()
 
