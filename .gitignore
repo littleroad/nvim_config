@@ -42,3 +42,6 @@ luac.out
 
 # Packer compiled plugin loader (generated)
 plugin/packer_compiled.lua
+
+# OpenCode
+.omo/
